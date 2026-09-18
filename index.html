@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technology portfolio of Victoria Zúñiga Fernández, IT Consultant and Business Analyst focused on AI, data analytics and digital transformation.">
+  <meta name="theme-color" content="#081120">
+  <title>Victoria Zúñiga Fernández | IT Consultant &amp; Business Analyst</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23081120'/%3E%3Cpath d='M14 17h10l8 25 8-25h10L37 49H27z' fill='%237ce7d9'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #eaf2ff;
+      --muted: #9aa9bd;
+      --bg: #07101d;
+      --bg-soft: #0b1626;
+      --panel: #101d2f;
+      --line: #23334a;
+      --accent: #7ce7d9;
+      --accent-2: #9bb8ff;
+      --shadow: 0 24px 70px rgba(0,0,0,.28);
+      --radius: 22px;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 7%, rgba(124,231,217,.10), transparent 25rem),
+        radial-gradient(circle at 3% 31%, rgba(155,184,255,.08), transparent 28rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .skip { position: absolute; left: -999px; top: 1rem; z-index: 999; }
+    .skip:focus { left: 1rem; background: var(--accent); color: #04120f; padding: .7rem 1rem; border-radius: 8px; }
+    .wrap { width: min(calc(100% - 2.5rem), var(--max)); margin-inline: auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background: rgba(7,16,29,.82); backdrop-filter: blur(18px);
+    }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { text-decoration: none; font-weight: 800; letter-spacing: -.03em; font-size: 1.12rem; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 1.25rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 650; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
+    .menu-button { display: none; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 10px; padding: .55rem .75rem; font: inherit; }
+    main { overflow: hidden; }
+    .hero { min-height: calc(100vh - 72px); display: grid; align-items: center; padding: 5rem 0; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(280px,.65fr); gap: 5rem; align-items: end; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .17em; font-size: .76rem; font-weight: 850; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(3.3rem, 8vw, 7.4rem); line-height: .94; letter-spacing: -.07em; margin: 1rem 0 1.7rem; max-width: 12ch; }
+    h1 em { font-style: normal; color: var(--accent); }
+    .hero-copy { color: #c0ccdc; font-size: clamp(1.05rem, 2vw, 1.28rem); max-width: 690px; }
+    .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 46px; padding: .72rem 1.05rem; border-radius: 12px; text-decoration: none; font-weight: 800; border: 1px solid var(--line); }
+    .button.primary { background: var(--accent); color: #06130f; border-color: var(--accent); }
+    .button.secondary { background: rgba(255,255,255,.025); }
+    .button:hover { transform: translateY(-2px); transition: .2s ease; }
+    .hero-note { border-left: 1px solid var(--line); padding-left: 1.5rem; color: var(--muted); }
+    .hero-note strong { display: block; color: var(--ink); font-size: 2rem; line-height: 1.1; margin: .35rem 0; }
+    .section { padding: 7rem 0; }
+    .section.alt { background: rgba(255,255,255,.018); border-block: 1px solid rgba(255,255,255,.05); }
+    .section-head { display: grid; grid-template-columns: .7fr 1.3fr; gap: 3rem; align-items: start; margin-bottom: 3.5rem; }
+    .section-no { color: var(--accent); font: 800 .8rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    h2 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.02; letter-spacing: -.055em; margin: .75rem 0 0; }
+    .lead { color: #c1cddd; font-size: 1.12rem; max-width: 760px; }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; }
+    .about-grid p { color: #bcc9d9; }
+    .facts { display: grid; gap: .8rem; }
+    .fact { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--line); padding: .8rem 0; }
+    .fact span { color: var(--muted); }
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .skill-card, .project, .case-panel, .swot-card {
+      border: 1px solid var(--line); background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012)); border-radius: var(--radius);
+    }
+    .skill-card { padding: 1.35rem; }
+    .skill-card h3 { font-size: 1rem; margin-bottom: .75rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: .48rem; }
+    .tag { border: 1px solid #30435e; color: #b9c8dc; padding: .27rem .55rem; border-radius: 999px; font-size: .78rem; }
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .project { padding: 1.55rem; min-height: 370px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .project::before { content: ""; position: absolute; width: 160px; height: 160px; border-radius: 50%; right: -85px; top: -85px; background: var(--glow, rgba(124,231,217,.12)); }
+    .project-index { color: var(--accent); font: 800 .8rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .project h3 { font-size: 1.55rem; line-height: 1.15; margin: 1.1rem 0 .35rem; }
+    .project .type { color: var(--muted); font-size: .87rem; }
+    .project p { color: #b8c5d5; margin: 1.2rem 0 1.5rem; }
+    .project .tags { margin-top: auto; }
+    .project.featured { border-color: rgba(124,231,217,.55); box-shadow: 0 0 0 1px rgba(124,231,217,.08) inset; }
+    .case-shell { display: grid; grid-template-columns: .8fr 1.2fr; gap: 1rem; align-items: start; }
+    .case-panel { padding: 1.7rem; }
+    .case-sticky { position: sticky; top: 96px; }
+    .case-sticky h3 { font-size: 2rem; line-height: 1.1; margin: .7rem 0; }
+    .case-sticky p { color: var(--muted); }
+    .architecture { margin: 1.5rem 0 0; display: grid; gap: .55rem; }
+    .architecture div { border: 1px solid var(--line); padding: .72rem .9rem; border-radius: 10px; color: #c8d4e3; }
+    .architecture div:not(:last-child)::after { content: "↓"; display: block; color: var(--accent); position: absolute; }
+    .case-steps { display: grid; gap: 1rem; }
+    .case-step { display: grid; grid-template-columns: 72px 1fr; gap: 1rem; padding: 1.65rem; border-bottom: 1px solid var(--line); }
+    .case-step:last-child { border: 0; }
+    .case-step .num { color: var(--accent); font: 850 1rem/1 ui-monospace, monospace; }
+    .case-step h3 { font-size: 1.2rem; margin-bottom: .55rem; }
+    .case-step p { margin: 0; color: #b8c5d5; }
+    .results { display: grid; grid-template-columns: repeat(2,1fr); gap: .65rem; margin-top: .9rem; }
+    .result { border: 1px solid var(--line); border-radius: 12px; padding: .9rem; color: #d6e0ed; }
+    .result::before { content: "✓"; color: var(--accent); font-weight: 900; margin-right: .5rem; }
+    .timeline { display: grid; gap: 0; }
+    .role { display: grid; grid-template-columns: 190px 1fr; gap: 2rem; padding: 1.6rem 0; border-top: 1px solid var(--line); }
+    .role time { color: var(--muted); }
+    .role h3 { margin-bottom: .5rem; }
+    .role p { color: #b8c5d5; max-width: 760px; }
+    .swot { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
+    .swot-card { padding: 1.5rem; }
+    .swot-card h3 { display: flex; align-items: center; gap: .65rem; }
+    .swot-card h3 span { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 9px; background: rgba(124,231,217,.1); color: var(--accent); }
+    .swot-card ol { margin: 0; padding-left: 1.2rem; color: #b8c5d5; }
+    .swot-card li { padding: .38rem 0; }
+    .contact-card { padding: clamp(2rem, 5vw, 4.5rem); border: 1px solid var(--line); border-radius: 30px; background: linear-gradient(135deg, rgba(124,231,217,.10), rgba(155,184,255,.06)); display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: end; box-shadow: var(--shadow); }
+    .contact-card h2 { max-width: 10ch; }
+    .contact-links { display: grid; gap: .7rem; }
+    .contact-links a { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: .8rem 0; text-decoration: none; font-weight: 750; }
+    footer { padding: 2rem 0 3rem; color: var(--muted); font-size: .86rem; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
+    @media (max-width: 900px) {
+      .hero-grid, .section-head, .about-grid, .case-shell, .contact-card { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+      .hero-note { border-left: 0; border-top: 1px solid var(--line); padding: 1.2rem 0 0; }
+      .skills, .projects { grid-template-columns: 1fr 1fr; }
+      .project:last-child { grid-column: 1 / -1; }
+      .case-sticky { position: static; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(calc(100% - 1.4rem), var(--max)); }
+      .menu-button { display: block; }
+      .nav-links { display: none; position: absolute; inset: 72px .7rem auto; padding: 1rem; background: #0c1829; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); flex-direction: column; align-items: stretch; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .55rem; }
+      .section { padding: 5rem 0; }
+      .skills, .projects, .swot, .results { grid-template-columns: 1fr; }
+      .project:last-child { grid-column: auto; }
+      .case-step, .role { grid-template-columns: 1fr; gap: .6rem; }
+      h1 { font-size: clamp(3.1rem, 17vw, 5rem); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Victoria Zúñiga Fernández, home">Victoria Zúñiga<span>.</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#case-study">Case Study</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid wrap">
+        <div>
+          <div class="eyebrow">IT Consultant · Business Analyst</div>
+          <h1>Business insight. <em>Technical depth.</em></h1>
+          <p class="hero-copy">I bridge business needs and technology through requirements analysis, functional documentation and software development, with a growing focus on AI, data analytics and digital transformation.</p>
+          <div class="actions">
+            <a class="button primary" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
+            <a class="button secondary" href="https://www.linkedin.com/in/victoria-zuniga-fernandez/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <aside class="hero-note" aria-label="Professional focus">
+          <span class="eyebrow">Current focus</span>
+          <strong>AI &amp; Data</strong>
+          <p>Applying technology to real business problems with clarity, critical thinking and human oversight.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section alt" id="about">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><span class="section-no">01 / ABOUT</span><h2>Connecting people, processes and systems.</h2></div>
+          <p class="lead">I am an IT Consultant and Business Analyst with professional experience in technology projects involving business requirements, functional documentation, document automation and collaboration with multidisciplinary teams.</p>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p>My technical background includes Java, Python, SQL, XML and web technologies, complemented by professional use of Jira and Confluence. I am especially interested in the intersection of business analysis, artificial intelligence, data analytics and digital transformation.</p>
+            <p>My interdisciplinary background strengthens my ability to analyze complex information, communicate it precisely and translate business needs into actionable technical requirements.</p>
+          </div>
+          <div class="facts" aria-label="Profile summary">
+            <div class="fact"><span>Role</span><strong>IT Consultant / BA</strong></div>
+            <div class="fact"><span>Focus</span><strong>AI, Data &amp; Transformation</strong></div>
+            <div class="fact"><span>Languages</span><strong>English · Spanish</strong></div>
+            <div class="fact"><span>Location</span><strong>Chile · Remote</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><span class="section-no">02 / SELECTED WORK</span><h2>Three projects. One technical progression.</h2></div>
+          <p class="lead">From object-oriented foundations to database-backed Java web applications and a modern Spring architecture.</p>
+        </div>
+        <div class="projects">
+          <article class="project" style="--glow:rgba(155,184,255,.14)">
+            <span class="project-index">01</span>
+            <h3>SmartTask</h3><div class="type">Java Task Management Application</div>
+            <p>Console-based task management application developed in Java. It supports normal and urgent tasks, completion status and deletion by identifier while applying object-oriented design and unit testing.</p>
+            <div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">JUnit</span><span class="tag">Collections</span><span class="tag">JavaDoc</span></div>
+          </article>
+          <article class="project featured">
+            <span class="project-index">02 · FEATURED</span>
+            <h3>Biblioteca Digital</h3><div class="type">Java Web Library Management System</div>
+            <p>Web application that integrates presentation, application logic, relational data persistence and server deployment to manage library information and operations.</p>
+            <div class="tags"><span class="tag">Java</span><span class="tag">JSP</span><span class="tag">JSTL</span><span class="tag">MySQL</span><span class="tag">Tomcat</span></div>
+          </article>
+          <article class="project" style="--glow:rgba(124,231,217,.15)">
+            <span class="project-index">03</span>
+            <h3>SpringEduManager</h3><div class="type">Educational Management Web Platform</div>
+            <p>Layered web application for managing students, courses, internships and evaluations, with role-based permissions, persistence and REST services.</p>
+            <div class="tags"><span class="tag">Java 17</span><span class="tag">Spring Boot</span><span class="tag">JPA</span><span class="tag">Security</span><span class="tag">REST</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="case-study">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><span class="section-no">03 / FEATURED CASE STUDY</span><h2>Biblioteca Digital</h2></div>
+          <p class="lead">A practical turning point: moving beyond isolated exercises to integrate multiple technologies into a functional Java web application.</p>
+        </div>
+        <div class="case-shell">
+          <aside class="case-panel case-sticky">
+            <span class="eyebrow">System flow</span><h3>From interface to persistence</h3>
+            <p>A clear separation of responsibilities helped connect each layer of the application.</p>
+            <div class="architecture" aria-label="Application architecture"><div>User interface</div><div>JSP / JSTL views</div><div>Java application logic</div><div>MySQL database</div><div>Apache Tomcat deployment</div></div>
+          </aside>
+          <div class="case-panel case-steps">
+            <article class="case-step"><span class="num">01</span><div><h3>The project</h3><p>Biblioteca Digital is a Java web application developed to manage library-related information and operations while integrating presentation, business logic, relational persistence and application deployment.</p></div></article>
+            <article class="case-step"><span class="num">02</span><div><h3>The challenge</h3><p>The main challenge was connecting Java logic, JSP/JSTL views, MySQL persistence and Apache Tomcat. This also required resolving configuration, dependency, connection and deployment issues.</p></div></article>
+            <article class="case-step"><span class="num">03</span><div><h3>The solution</h3><p>The application was organized by separating presentation, application logic and persistence responsibilities. MySQL provided relational storage, Tomcat ran the application and the completed project was packaged as a WAR file for deployment.</p></div></article>
+            <article class="case-step"><span class="num">04</span><div><h3>Tools and technical skills</h3><p>Java · JSP · JSTL · SQL · MySQL · Apache Tomcat · WAR packaging · Web application deployment · Debugging · Component integration.</p></div></article>
+            <article class="case-step"><span class="num">05</span><div><h3>Results and impact</h3><p>Because the project was not evaluated through an experimental performance study, impact is reported through verifiable functional outcomes.</p><div class="results"><div class="result">Functional web application</div><div class="result">Relational database integration</div><div class="result">Successful Tomcat deployment</div><div class="result">WAR packaging completed</div></div></div></article>
+            <article class="case-step"><span class="num">06</span><div><h3>Key learnings</h3><p>The project strengthened my understanding of how a Java web application's components interact. It also developed my ability to diagnose issues systematically, test each component progressively and resolve integration and deployment problems.</p></div></article>
+            <article class="case-step"><span class="num">07</span><div><h3>Why this project?</h3><p>I selected Biblioteca Digital because it clearly represents my technical growth. It required me to integrate programming, databases and web technologies into one working solution while applying persistence, configuration, troubleshooting and deployment skills.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="wrap reveal">
+        <div class="section-head"><div><span class="section-no">04 / CAPABILITIES</span><h2>Skills built around useful outcomes.</h2></div><p class="lead">A hybrid profile that combines business analysis, technical implementation and clear documentation.</p></div>
+        <div class="skills">
+          <article class="skill-card"><h3>Business Analysis</h3><div class="tags"><span class="tag">Requirements Analysis</span><span class="tag">Functional Documentation</span><span class="tag">Process Analysis</span><span class="tag">Stakeholders</span></div></article>
+          <article class="skill-card"><h3>Programming</h3><div class="tags"><span class="tag">Java</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">XML</span><span class="tag">JavaScript</span></div></article>
+          <article class="skill-card"><h3>Web &amp; Backend</h3><div class="tags"><span class="tag">Spring Boot</span><span class="tag">JSP</span><span class="tag">JSTL</span><span class="tag">REST APIs</span></div></article>
+          <article class="skill-card"><h3>Data &amp; Databases</h3><div class="tags"><span class="tag">MySQL</span><span class="tag">H2</span><span class="tag">Data Analysis</span><span class="tag">NLP</span><span class="tag">spaCy</span></div></article>
+          <article class="skill-card"><h3>Tools</h3><div class="tags"><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Git</span><span class="tag">Maven</span><span class="tag">Postman</span></div></article>
+          <article class="skill-card"><h3>Ways of Working</h3><div class="tags"><span class="tag">Agile</span><span class="tag">Scrum</span><span class="tag">Technical Writing</span><span class="tag">Problem Solving</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="experience">
+      <div class="wrap reveal">
+        <div class="section-head"><div><span class="section-no">05 / EXPERIENCE</span><h2>Professional experience beyond the classroom.</h2></div><p class="lead">Technology consulting work involving requirements, documentation, document automation and collaboration across business and technical teams.</p></div>
+        <div class="timeline">
+          <article class="role"><time>Professional experience</time><div><h3>IT Consultant &amp; Business Analyst</h3><p>Participation in technology projects involving requirements analysis, functional and technical documentation, document automation and communication between business and development teams.</p><div class="tags"><span class="tag">Requirements</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">XML</span><span class="tag">OpenText</span><span class="tag">Agile collaboration</span></div></div></article>
+          <article class="role"><time>Current direction</time><div><h3>AI, Data Analytics &amp; Digital Transformation</h3><p>Developing an applied profile focused on understanding business problems, evaluating emerging technologies critically and documenting solutions in a way that enables effective decisions.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="swot">
+      <div class="wrap reveal">
+        <div class="section-head"><div><span class="section-no">06 / PROFESSIONAL SWOT</span><h2>A realistic view of growth and opportunity.</h2></div><p class="lead">A personal analysis connecting current capabilities with the demands of the technology market.</p></div>
+        <div class="swot">
+          <article class="swot-card"><h3><span>S</span> Strengths</h3><ol><li>Interdisciplinary profile connecting business and technology.</li><li>Experience in requirements and functional documentation.</li><li>Knowledge of Java, Python, SQL and XML.</li><li>Strong learning capacity and adaptability.</li><li>Applied knowledge of AI, NLP and data analysis.</li></ol></article>
+          <article class="swot-card"><h3><span>W</span> Development areas</h3><ol><li>Deepen practical knowledge of cloud technologies.</li><li>Build further experience across the Spring ecosystem.</li><li>Expand deployment, CI/CD and container skills.</li><li>Deepen software architecture and design patterns.</li><li>Add further applied AI, data and cloud projects.</li></ol></article>
+          <article class="swot-card"><h3><span>O</span> Opportunities</h3><ol><li>Growth of AI applied to business operations.</li><li>Continued demand for digital transformation.</li><li>Need for professionals who connect business and technology.</li><li>Expansion of remote and international work.</li><li>Convergence of AI, data and business analysis.</li></ol></article>
+          <article class="swot-card"><h3><span>T</span> Threats</h3><ol><li>Rapid technology evolution and continuous reskilling.</li><li>High competition in the technology job market.</li><li>Automation of routine technical tasks.</li><li>Increasing demand for specialization.</li><li>Roles requiring highly specific prior experience.</li></ol></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap reveal">
+        <div class="contact-card">
+          <div><span class="eyebrow">Let’s connect</span><h2>Interested in meaningful technology work.</h2><p class="lead">Open to conversations about business analysis, technology consulting, AI, data and digital transformation opportunities.</p></div>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/victoria-zuniga-fernandez/" target="_blank" rel="noreferrer"><span>LinkedIn</span><span aria-hidden="true">↗</span></a>
+            <a href="#top"><span>Back to top</span><span aria-hidden="true">↑</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">© <span id="year"></span> Victoria Zúñiga Fernández · IT Consultant &amp; Business Analyst</div></footer>
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('#nav-links');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.matches('a')) {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.querySelector('#year').textContent = new Date().getFullYear();
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+      }, { threshold: .12 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+  </script>
+</body>
+</html>
